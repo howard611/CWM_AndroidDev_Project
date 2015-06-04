@@ -2,46 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.3.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f2f7ec211ce4d244ee97a57523eeb4526dc3cf8a">
-        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/pre-dexed/debug/classes-4ded062b511377e8e273806ea12889b5d2a3da5a.jar" />
-    </item>
-    <item
-        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/pre-dexed/debug/classes-b317345369e1c3578d0dd9913cb5f15ccbcc3da4.jar" />
-    </item>
-    <item
-        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/pre-dexed/debug/classes-b98695a8615ab799180ff5dc2b3dd139890cb9e3.jar" />
-    </item>
-    <item
-        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-e81ade0a441d3eff9159a497835b99772834bacd.jar" />
-    </item>
-    <item
-        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.3.0/classes.jar"
+        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.3.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="fe3e0c6de7cceed888b277487238b6af9a1cc299">
-        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/pre-dexed/debug/classes-a3245b3c1c2c86abac28f05fd11c97634ec55d4c.jar" />
+        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/pre-dexed/debug/classes-c3eca42928a54131fd15493638287756a66a6cac.jar" />
+    </item>
+    <item
+        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/pre-dexed/debug/classes-0a9095c3b542d13cf20f399cdfefb81e96e07391.jar" />
+    </item>
+    <item
+        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-6fdfb6451752c8799f1760ec68043dadbc7a8100.jar" />
     </item>
     <item
         jar="/Users/Howard/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/CWM_Android_06/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-bebb3b403fc7531c6cadb3b2f6d3f80afb568c98.jar" />
+        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-bebb3b403fc7531c6cadb3b2f6d3f80afb568c98.jar" />
+    </item>
+    <item
+        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.3.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f2f7ec211ce4d244ee97a57523eeb4526dc3cf8a">
+        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/pre-dexed/debug/classes-5e2e99123cb1584a0f88a4c1d2f14f4765016f8c.jar" />
+    </item>
+    <item
+        jar="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/Howard/Documents/Everything/Main Docs/Academic/Oxford/Academic-related/Engineering/Y2/Android Development/Project/CWM_AndroidDev_Project/app/build/intermediates/pre-dexed/debug/classes-cea06fb16590d6f26b9e64601287c4753e835d39.jar" />
     </item>
 
 </items>

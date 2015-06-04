@@ -27,6 +27,16 @@ import android.content.SharedPreferences;
 import android.location.LocationListener;
 import android.preference.PreferenceManager;
 
+import android.os.Environment;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -35,8 +45,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-
-import java.util.Random;
 
 public class MainActivity extends FragmentActivity  {
 
@@ -53,9 +61,8 @@ public class MainActivity extends FragmentActivity  {
     // This is the delay that is set initially (in seconds)
     private int delayAlarmSeconds = 5;
 
-
-    private Button alarmActivation = null;
-    private Button alarmDeactivation = null;
+    private Button addLocation = null;
+    private Button clear = null;
     private SeekBar alarmDelay = null;
     private TextView alarmTextView = null;
     private SharedPreferences SP = null;
@@ -63,6 +70,13 @@ public class MainActivity extends FragmentActivity  {
     private LocationManager locationManager = null;
     private int position_index;
     private IntentFilter myFilter = new IntentFilter(ACTION_NAME);
+
+
+    private ListView listview;
+    ArrayAdapter<String> arrayAdapter;
+
+    String[] locations ={"Oxford","London"};
+    public List<String> list = new ArrayList<String>(Arrays.asList(locations));
 
 
     // A variable that will keep the state of the last known location
@@ -110,6 +124,17 @@ public class MainActivity extends FragmentActivity  {
         public void onReceive(Context context, Intent intent) {
             Toast.makeText(context, "Alarm triggered", Toast.LENGTH_LONG).show();
 
+        }
+    };
+
+
+
+    // Define a listener that responds to location updates. The updates arrives
+    LocationListener locationListener = new LocationListener() {
+        public void onLocationChanged(Location location) {
+            // Store location data every time the location changes
+            lastKnownLocation = location;
+
             if (locationAvailable && lastKnownLocation != null) {
                 Log.d(this.toString(), "geo: " + lastKnownLocation.getLongitude() + "," + lastKnownLocation.getLatitude() + "," + lastKnownLocation.getAltitude());
             }
@@ -141,16 +166,6 @@ public class MainActivity extends FragmentActivity  {
                 }
             }
         }
-    };
-
-
-
-    // Define a listener that responds to location updates. The updates arrives
-    LocationListener locationListener = new LocationListener() {
-        public void onLocationChanged(Location location) {
-            // Store location data every time the location changes
-            lastKnownLocation = location;
-        }
 
         public void onStatusChanged(String provider, int status, Bundle extras) {}
         public void onProviderEnabled(String provider) {}
@@ -166,7 +181,8 @@ public class MainActivity extends FragmentActivity  {
         // the alarm receiver so that the application
         // is in background and does not consume battery
         // [ REMOVE ME ]
-        unregisterReceiver(alarmReceiver);
+        //
+        // unregisterReceiver(alarmReceiver);
 
         // Here we do the same for the location manager
         locationManager.removeUpdates(locationListener);
@@ -184,7 +200,8 @@ public class MainActivity extends FragmentActivity  {
 
 
         // Here we register the receiver of the alarm events
-        registerReceiver(alarmReceiver, myFilter);
+        //
+        // registerReceiver(alarmReceiver, myFilter);
 
 
         super.onResume();
@@ -273,14 +290,17 @@ public class MainActivity extends FragmentActivity  {
         // the application is restarted
         SP = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
+        listview = (ListView) findViewById(R.id.list);
+        //TODO:  (2.1) initialize the arrayAdapter and attach it to the layout and connect to the relevant data
+        arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
+        //TODO:  (2.1) attach the adapter with the listVieW
+        listview.setAdapter(arrayAdapter);
+
         // Find the button and populate our variable
-        alarmActivation = (Button) findViewById(R.id.alarm_activation);
-
-
+        addLocation = (Button) findViewById(R.id.add_location);
         // Assign the ClickListener that will manage the 'click' event
-        alarmActivation.setOnClickListener(
+        addLocation.setOnClickListener(
                 new View.OnClickListener() {
-
                     @Override
                     public void onClick(View v) {
                         int id = SP.getInt("ALARM_ID", -1);
@@ -288,7 +308,7 @@ public class MainActivity extends FragmentActivity  {
                         if ( id < 0 ) {
                             Random r = new Random();
                             id = r.nextInt(10000);
-                            setAlarm(delayAlarmSeconds*1000, id);
+                            // setAlarm(delayAlarmSeconds*1000, id);
 
 
                             Log.d(this.toString(), "Setting Alarm ID: " + id + " every " + delayAlarmSeconds + " seconds");
@@ -308,43 +328,49 @@ public class MainActivity extends FragmentActivity  {
 
 
         // Find the Deactivate button and populate our variable
-        alarmDeactivation = (Button) findViewById(R.id.alarm_deactivation);
-
-
+        clear = (Button) findViewById(R.id.clear);
         // Assign the ClickListener that will manage the 'click' event
-        alarmDeactivation.setOnClickListener(
+        clear.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int id = SP.getInt("ALARM_ID", -1);
+
+
+
+                        /*int id = SP.getInt("ALARM_ID", -1);
                         if ( id < 0 ) {
                             Toast.makeText(getApplicationContext(), "Alarm not set", Toast.LENGTH_SHORT).show();
                         } else {
                             cancelAlarm(id);
                             Log.d(this.toString(), "Cancelled Alarm ID: " + id);
 
-
                             // Here we remove the value of the alarm_id from the Shared Preference
-                            SP.edit().remove("ALARM_ID").commit();
+                            SP.edit().remove("ALARM_ID").commit();*/
                         }
-                    }
                 });
 
+
         // Now we find the TextView element
-        alarmTextView = (TextView) findViewById(R.id.alarmTextView);
+
+        // TODO JUST IN CASE I NEED THIS IN THE FUTURE
+        // alarmTextView = (TextView) findViewById(R.id.alarmTextView);
 
         // The SeekBar is the element that let
         // you have a scrollbar selector to pick
         // a number between the set MIN and MAX
-        alarmDelay = (SeekBar) findViewById(R.id.alarm_delay);
+
+        // TODO JUST IN CASE I NEED THIS IN THE FUTURE
+        // alarmDelay = (SeekBar) findViewById(R.id.alarm_delay);
 
         // Here we set the standard delay.
-        alarmDelay.setProgress(delayAlarmSeconds);
+
+        // alarmDelay.setProgress(delayAlarmSeconds);
 
 
         // Many types of event listeners exists this onSeekBarChange one does what the
         // names suggest and fires an event every time the SeekBar changes its value
-        alarmDelay.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+        /*alarmDelay.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // We both display and store for future use the value of the progressbar
@@ -357,7 +383,7 @@ public class MainActivity extends FragmentActivity  {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {}
-        });
+        });*/
     }
 
 

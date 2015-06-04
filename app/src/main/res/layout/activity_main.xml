@@ -7,69 +7,68 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="uk.ac.ox.ibme.android_06.MainActivity" >
+    tools:context="uk.ac.ox.ibme.android_06.MainActivity"
+    android:weightSum="1"
+    >
 
-    <TextView
+    <!--TextView
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/hello_world"
-        android:textAlignment="center" />
+        android:textAlignment="center" /-->
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="1">
-
-        <SeekBar
+        <!--SeekBar
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
             android:id="@+id/alarm_delay"
             android:indeterminate="false"
             android:max="60"
-            android:progress="1" />
+            android:progress="1" /-->
 
-        <TextView
+        <!--TextView
             android:id="@+id/alarmTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:text="0"/>
-    </LinearLayout>
+            android:text="0"/-->
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/list"
+            android:layout_weight="0.15"
+            android:layout_gravity="center_horizontal" />
+
+        <fragment
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/map"
+            android:layout_weight="0.83"
+            class="com.google.android.gms.maps.SupportMapFragment">
+        </fragment>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="0.02"
+        android:weightSum="1">
+    <Button
+        android:id="@+id/add_location"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
+        android:text="Add Location" />
 
-        <Button
-            android:id="@+id/alarm_activation"
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-            android:text="Activate" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="Deactivate"
-            android:id="@+id/alarm_deactivation" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="Clear"
+        android:id="@+id/clear" />
     </LinearLayout>
-
-    <!-- TODO EX 1:
-        Create here the <fragment ...... /> element according to instructions from the handout
-    -->
-
-    <fragment
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/map"
-        class="com.google.android.gms.maps.SupportMapFragment"
-        >
-    </fragment>
 
 </LinearLayout>
